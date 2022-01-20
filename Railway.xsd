@@ -1,51 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" 
-xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:template match="/">
-		<!-- TODO: Auto-generated template -->
-		<html>
-		<head>
-		</head>
-		<body>
-		<h1 style="text-align:center">Booking Details And Status</h1>
-		<table border="2" align="center">
-		<tr>
-		<th>TrainNo</th>
-		<th>Seatno</th>
-		<th>PassengerName</th>
-		<th>Source</th> 
-		<th>Destination</th>
-		<th>BookingStatus</th>
-		<th>StationCode</th>
-		</tr>
-		<xsl:for-each select="Railway/BookingAndPayments">
-		
-		<tr>
-		<td>
-		<xsl:value-of select="trainno"></xsl:value-of>
-		</td>
-		<td>
-		<xsl:value-of select="seatno"></xsl:value-of>
-		</td>
-		<td>
-		<xsl:value-of select="passengername"></xsl:value-of>
-		</td>
-		<td>
-		<xsl:value-of select="source"></xsl:value-of>
-		</td>
-		<td>
-		<xsl:value-of select="destination"></xsl:value-of>
-		</td>
-		<td>
-		<xsl:value-of select="bookingstatus"></xsl:value-of>
-		</td>
-		<td>
-		<xsl:value-of select="stationCode"></xsl:value-of>
-		</td>
-		</tr>
-		</xsl:for-each>
-		</table>
-		</body>
-		</html>
-	</xsl:template>
-</xsl:stylesheet>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Railway">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="BookingAndPayments">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="trainno" type="xs:unsignedShort" />
+              <xs:element name="seatno" type="xs:unsignedByte" />
+              <xs:element name="passengername" type="xs:string" />
+              <xs:element name="source" type="xs:string" />
+              <xs:element name="destination" type="xs:string" />
+              <xs:element name="bookingstatus" type="xs:string" />
+              <xs:element name="stationCode" type="xs:unsignedShort" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema> 
